@@ -17,6 +17,7 @@ local function set_tabstop()
     or vim.bo.filetype == "yaml"
     or vim.bo.filetype == "yml"
     or vim.bo.filetype == "lua"
+    or vim.bo.filetype == "json"
   then
     vim.bo.tabstop = 2
     vim.bo.shiftwidth = 2
