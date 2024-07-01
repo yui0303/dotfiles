@@ -49,5 +49,56 @@ return {
     keys = {
       { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
     },
+    config = function()
+      require("telescope").load_extension "lazygit"
+    end,
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    event = { "InsertEnter", "CmdlineEnter" },
+    dependencies = {
+      {
+        "zbirenbaum/copilot-cmp",
+        config = function()
+          require("copilot_cmp").setup()
+        end,
+      },
+      {
+        "copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+          require "configs.copilot"
+        end,
+      },
+    },
+    opts = {
+      sources = {
+        { name = "copilot", group_index = 1 },
+        { name = "nvim_lsp", group_index = 1 },
+        { name = "luasnip", group_index = 2 },
+        { name = "nvim_lua", group_index = 2 },
+        { name = "path", group_index = 2 },
+      },
+    },
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+      lsp ={
+        hover = false,
+        signature = false,
+      }
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    },
   },
 }
