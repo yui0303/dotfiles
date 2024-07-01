@@ -34,6 +34,16 @@ return {
     },
   },
   {
+    "rmagatti/auto-session",
+    lazy = false,
+    config = function()
+      require("auto-session").setup {
+        log_level = "error",
+        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+      }
+    end,
+  },
+  {
     "nvim-telescope/telescope.nvim",
   },
   {
@@ -85,13 +95,7 @@ return {
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {
-      -- add any options here
-      lsp ={
-        hover = false,
-        signature = false,
-      }
-    },
+    opts = overrides.noice,
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",

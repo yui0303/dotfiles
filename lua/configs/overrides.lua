@@ -14,7 +14,24 @@ M.mason = {
     -- c/cpp
     "clangd",
     "clang-format",
-    "cmakelint"
+    "cmakelint",
+  },
+}
+
+M.noice = {
+  routes = {
+    {
+      view = "cmdline",
+      filter = { event = "msg_showmode" },
+    },
+  },
+  lsp = {
+    hover = {
+      enabled = false,
+    },
+    signature = {
+      enabled = false,
+    },
   },
 }
 
