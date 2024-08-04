@@ -19,6 +19,11 @@ M.mason = {
     -- devops
     "dockerls",
     "docker_compose_language_service",
+
+    -- python
+    "black",
+    "isort",
+    "pyright",
   },
 }
 
