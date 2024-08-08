@@ -30,8 +30,18 @@ M.mason = {
 M.noice = {
   routes = {
     {
-      view = "cmdline",
-      filter = { event = "msg_showmode" },
+      filter = {
+        event = "msg_show",
+        kind =  "",
+        find = "written",
+      },
+      opt = {
+        skip = true,
+      },
+    },
+    {
+      view = "notify",
+      filter = {event = "msg_showmode"},
     },
   },
   lsp = {
