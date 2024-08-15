@@ -81,14 +81,17 @@ return {
           require "configs.copilot"
         end,
       },
+      {
+        "hrsh7th/cmp-nvim-lsp", -- Add cmp-nvim-lsp as a dependency
+      },
     },
     opts = {
       sources = {
         { name = "copilot", group_index = 1 },
         { name = "nvim_lsp", group_index = 1 },
+        { name = "path", group_index = 1 },
         { name = "luasnip", group_index = 2 },
         { name = "nvim_lua", group_index = 2 },
-        { name = "path", group_index = 2 },
       },
     },
   },
