@@ -12,3 +12,5 @@ map("i", "jk", "<ESC>")
 map({ "n", "t" }, "<Leader>ft", function()
   require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
 end, { desc = "terminal toggle floating term" })
+
+map({"n"}, "<Leader>se", vim.diagnostic.open_float)
